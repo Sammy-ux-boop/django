@@ -1,0 +1,170 @@
+/* Style for the map container */
+#map {
+    /* Positioning */
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    bottom: 1%;
+    width: 75%; /* 3/4 of the page width */
+}
+
+/* Style for the query form container */
+#queryForm {
+    /* Box model */
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+/* Style for form labels */
+#queryForm label {
+    /* Display */
+    display: block;
+    margin-bottom: 8px;
+    /* Typography */
+    font-weight: bold;
+}
+
+/* Style for input fields */
+#queryForm input[type="text"],
+#queryForm select {
+    /* Box model */
+    width: calc(100% - 18px); /* Adjusting for padding and border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* Style for the submit button */
+#submitQuery {
+    /* Box model */
+    width: 100%;
+    padding: 12px;
+    /* Colors */
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Style for the query form heading */
+#queryForm h2 {
+    /* Spacing */
+    margin-top: 0;
+    margin-bottom: 15px;
+    /* Typography */
+    font-size: 24px;
+    color: #333;
+    font-style: italic;
+}
+
+/* CSS for the attribute table container */
+#attributeTableContainer {
+    /* Positioning */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 20%; /* Adjusted width */
+    right: 1%;
+    max-height: 360px; /* Adjusted maximum height */
+    /* Overflow */
+    overflow-y: auto;
+    overflow-x: auto; 
+    /* Box model */
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+}
+
+/* Adjust attribute table styling */
+#attributeTable {
+    /* Table layout */
+    width: 100%;
+    /* Spacing */
+    margin-top: 20px;
+    /* Border collapse */
+    border-collapse: collapse;
+}
+
+/* Style for the attribute table header */
+#attributeTable th {
+    /* Positioning */
+    position: sticky;
+    top: 0; /* Stick the headers to the top */
+    /* Colors */
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    /* Borders and padding */
+    border: 1px solid #ddd;
+    padding: 8px;
+    /* Text alignment */
+    text-align: left;
+    /* Z-index */
+    z-index: 1; /* Ensure headers stay above other elements */
+}
+
+/* Style for the attribute table rows */
+#attributeTable tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row background */
+}
+
+#attributeTable tr:hover {
+    background-color: #ddd; /* Hover background */
+}
+
+/* Style for clicked row in attribute table */
+#attributeTable tbody tr.clicked-row {
+    background-color: #daff07; /* Yellow background */
+    color: #212529; /* Dark text */
+}
+
+#sentinelDataFormContainer {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#sentinelDataForm {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#sentinelDataForm h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#sentinelDataForm label {
+    font-weight: bold;
+}
+
+#sentinelDataForm input[type="file"],
+#sentinelDataForm input[type="date"],
+#sentinelDataForm button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #be1b1b;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#sentinelDataForm button {
+    background-color: #007bff;
+    color: rgb(10, 141, 173);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#sentinelDataForm button:hover {
+    background-color: #0056b3;
+}
+

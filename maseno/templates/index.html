@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maseno Geodatabase</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'leaflet/leaflet.css' %}">
+    <link rel="stylesheet" href="{% static 'leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.css' %}">
+    <link rel="stylesheet" href="{% static 'leaflet-control-geocoder-main/Control.Geocoder.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! <a href="{% url 'logout' %}">Logout</a></p>
+{% else %}
+    <p><a href="{% url 'login' %}">Login</a></p>
+{% endif %}
+
+
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Attribute Query Form -->
+    <div id="queryFormContainer">
+        <div id="queryForm">
+            <h2>Attribute Query</h2>
+            <label for="layerSelect">Select layer to query:</label><br>
+            <select id="layerSelect" name="layerSelect">
+                <option value="Hostels">Hostels</option>
+                <option value="Offices">Offices</option>
+                <option value="Playground">Playground</option>
+                <option value="Roads">Roads</option>
+                <option value="Trees">Trees</option>
+                <option value="NewTutionBlock">New Tution Block</option>
+                <option value="LectureHalls">Lecture Halls</option>
+                <option value="NewLibrary">New Library</option>
+                <option value="UtilitiesPolygonFeatures">UtilitiesPolygonFeatures</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Vegetation">Vegetation</option>
+            </select><br>
+            <label for="attributeName">Attribute Name:</label><br>
+            <select id="attributeName" name="attributeName"></select><br>
+            
+            <label for="operator">Operator:</label><br>
+            <select id="operator" name="operator">
+                <option value="=">Equal to</option>
+                <option value=">">Greater than</option>
+                <option value="<">Less than</option>
+            </select><br>
+            
+            <label for="attributeValue">Attribute Value:</label><br>
+            <input type="text" id="attributeValue" name="attributeValue" placeholder="Enter attribute value"><br>
+            
+            <button id="submitQuery">Submit Query</button>
+        </div>
+    </div>
+    
+    <!-- Attribute Table -->
+    <div id="attributeTableContainer">
+        <h2>Attribute Table</h2>
+        <div id="attributeTable"></div>
+    </div>
+   
+     <!-- Sentinel Data Form -->
+     <div id="sentinelDataFormContainer">
+        <div id="sentinelDataForm">
+            <h2>Retrieve Sentinel Data</h2>
+            <label for="geojsonFile">Select GeoJSON File:</label><br>
+            <input type="file" id="geojsonFile" name="geojsonFile" accept=".geojson,.json"><br>
+            <label for="startDate">Start Date:</label><br>
+            <input type="date" id="startDate" name="startDate"><br>
+            <label for="endDate">End Date:</label><br>
+            <input type="date" id="endDate" name="endDate"><br>
+            <button id="retrieveSentinelData">Retrieve Data</button>
+        </div>
+    </div>
+    
+    <script src="{% static 'jquery-3.7.0.min.js' %}"></script>
+    <script src="{% static 'leaflet/leaflet.js' %}"></script>
+    <script src="{% static 'leaflet-providers-master/leaflet-providers.js' %}"></script>
+    <script src="{% static 'leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.min.js' %}"></script>
+    <script src="{% static 'leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.js' %}"></script>
+    <script src="{% static 'leaflet-control-geocoder-main/Control.Geocoder.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+    
+</body>
+</html>
